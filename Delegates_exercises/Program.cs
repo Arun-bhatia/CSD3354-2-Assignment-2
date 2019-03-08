@@ -9,25 +9,20 @@ namespace Delegates_exercises
 {
     class DelegateExercises
     {
-        public delegate void MyDelegate(int value);
+        public delegate void MyDelegate();
 
         public static void Main(String[] args)
         {
-            MyDelegate myDelegate = Method2;
-            myDelegate(50);
+            MyDelegate myDelegate = Method1;
+            myDelegate();
         }
 
-         public static void Method2(int x)//static method
+         public static void Method1()//static methodno parameters
         {
-            Console.WriteLine("Method2");
-            Console.WriteLine("You entered "+x);
+            Console.WriteLine("Method1 executed");
+            //Console.WriteLine("You entered "+x);
             Console.ReadLine();
-        }
-
-        
-
-
-        
+        } 
     }
     }
 
