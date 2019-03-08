@@ -9,18 +9,18 @@ namespace Delegates_exercises
 {
     class DelegateExercises
     {
-        public delegate void MyDelegate();
+        public delegate void MyDelegate(int value);
 
         public static void Main(String[] args)
         {
-            MyDelegate myDelegate = Method1;
-            myDelegate();
+            MyDelegate myDelegate = Method2;
+            myDelegate(50);
         }
 
-         public static void Method1()//static methodno parameters
+         public static void Method2(int x)//static methodno parameters
         {
-            Console.WriteLine("Method1 executed");
-            //Console.WriteLine("You entered "+x);
+            Console.WriteLine("Method 2 executed");
+            Console.WriteLine("You entered "+x);
             Console.ReadLine();
         } 
     }
