@@ -9,49 +9,45 @@ namespace Delegates_exercises
 {
     class program
     {
-        //public delegate void MyDelegate();
-
         public static void Main(String[] args)
         {
-            //    MyDelegate myDelegate = Method1;
-            //    myDelegate+=Method2;
-            //    myDelegate(50);
-            //}
-            //public static void Method1(int num1)
-            //{
-            //    Console.WriteLine(num1 * 2);
-            //}
+            DelegateExercises delegatesExercises = new DelegateExercises();
+            delegatesExercises.method3();
+            Console.ReadLine();
 
-
-            // public static void Method2(int x)//static methodno parameters
-            //{
-            //    Console.WriteLine("Method 2 executed");
-            //    Console.WriteLine("You entered "+x);
-            //    Console.ReadLine();
-            //}
-
-            //public static void Method3(int num2)
-            //{
-            //    Console.WriteLine(num2 * 10);
-            //}
-            DelegateExercises delegateExercises = new DelegateExercises();
-            delegateExercises.Method3();
-        }
-        
-    }
-    public class DelegateExercises
-    {
-        public delegate int MyDelegate();
-        void Method1()
-        {
-            Console.WriteLine("my delegate");
-        }
-        
-        public void Method3()
-        {
-            MyDelegate myDelegate = new MyDelegate(Method1);
-            myDelegate();
         }
     }
-}
+        public class DelegateExercises
+        {
+            public delegate int Mydelegate(int value);
+            int Method1(int intmethod1)
+            {
+                return intmethod1 * 2;
+            }
+
+            int Method2(int intmethod1)
+            {
+                return intmethod1 * 10;
+            }
+
+            public void Method4(Mydelegate myDelegate)
+            {
+                int result = myDelegate(10);
+                Console.WriteLine(result);
+            }
+
+            public void method3()
+            {
+                Mydelegate myDelegate = new Mydelegate(Method1);
+                Method4(myDelegate);
+                myDelegate = new Mydelegate(Method2);
+                Method4(myDelegate);
+            }
+        }
+
+    }
+
+    
+
+
 
