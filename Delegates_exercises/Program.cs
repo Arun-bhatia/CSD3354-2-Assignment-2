@@ -17,33 +17,19 @@ namespace Delegates_exercises
 
         }
     }
-        public class DelegateExercises
+    public delegate void Mydelegate();
+    public class DelegateExercises
         {
-            public delegate int Mydelegate(int value);
-            int Method1(int intmethod1)
+            
+            void Method1()
             {
-                return intmethod1 * 4;
+            Console.WriteLine("method1");
             }
-
-            int Method2(int intmethod1)
-            {
-                return intmethod1 * 20;
-            }
-
-            public void Method4(Mydelegate myDelegate)
-            {
-                for(int i=1;i<=5;i++)
-            {
-                Console.WriteLine(myDelegate(i)+" ");
-            }
-        }
 
             public void Method3()
             {
                 Mydelegate myDelegate = new Mydelegate(Method1);
-                Method4(myDelegate);
-                myDelegate = new Mydelegate(Method2);
-                Method4(myDelegate);
+            myDelegate();
             }
         }
     }
