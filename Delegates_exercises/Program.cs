@@ -12,7 +12,7 @@ namespace Delegates_exercises
         public static void Main(String[] args)
         {
             DelegateExercises delegatesExercises = new DelegateExercises();
-            delegatesExercises.method3();
+            delegatesExercises.Method3();
             Console.ReadLine();
 
         }
@@ -22,21 +22,23 @@ namespace Delegates_exercises
             public delegate int Mydelegate(int value);
             int Method1(int intmethod1)
             {
-                return intmethod1 * 2;
+                return intmethod1 * 4;
             }
 
             int Method2(int intmethod1)
             {
-                return intmethod1 * 10;
+                return intmethod1 * 20;
             }
 
             public void Method4(Mydelegate myDelegate)
             {
-                int result = myDelegate(10);
-                Console.WriteLine(result);
+                for(int i=1;i<=5;i++)
+            {
+                Console.WriteLine(myDelegate(i)+" ");
             }
+        }
 
-            public void method3()
+            public void Method3()
             {
                 Mydelegate myDelegate = new Mydelegate(Method1);
                 Method4(myDelegate);
@@ -44,7 +46,6 @@ namespace Delegates_exercises
                 Method4(myDelegate);
             }
         }
-
     }
 
     
