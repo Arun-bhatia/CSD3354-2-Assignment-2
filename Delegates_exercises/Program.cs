@@ -13,16 +13,27 @@ namespace Delegates_exercises
 
         public static void Main(String[] args)
         {
-            MyDelegate myDelegate = Method2;
+            MyDelegate myDelegate = Method1;
+            myDelegate+=Method2;
             myDelegate(50);
         }
+        public static void Method1(int num1)
+        {
+            Console.WriteLine(num1 * 2);
+        }
 
+        
          public static void Method2(int x)//static methodno parameters
         {
             Console.WriteLine("Method 2 executed");
             Console.WriteLine("You entered "+x);
             Console.ReadLine();
-        } 
+        }
+
+        public static void Method3(int num2)
+        {
+            Console.WriteLine(num2 * 10);
+        }
     }
     }
 
